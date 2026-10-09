@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flight Price Predictor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>✈ Flight Price Predictor</h1>
+      <p>Estimate an Indian domestic airfare with a Random Forest model.</p>
+    </header>
+
+    <form id="form" class="card" novalidate>
+      <div class="grid">
+        <label>Journey date <input type="date" id="date" required></label>
+        <label>Airline <select id="airline"></select></label>
+        <label>From <select id="source"></select></label>
+        <label>To <select id="destination"></select></label>
+        <label>Stops <select id="stops"></select></label>
+        <label>Departure time <input type="time" id="dep" required></label>
+        <label class="wide">Flight duration
+          <span class="dur">
+            <input type="number" id="dh" min="0" max="47" value="2" required> <em>h</em>
+            <input type="number" id="dm" min="0" max="59" value="30" required> <em>min</em>
+          </span>
+          <small id="arrival"></small>
+        </label>
+      </div>
+      <button type="submit" id="btn">Estimate price</button>
+    </form>
+
+    <section id="result" class="card" hidden aria-live="polite"></section>
+  </main>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

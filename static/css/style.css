@@ -1,0 +1,29 @@
+:root { --bg:#f3f6fb; --card:#fff; --ink:#1b2635; --muted:#6b7a90; --brand:#2563eb; --line:#d9e1ec; --warn:#b45309; --err:#b91c1c; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#0f1520; --card:#18202e; --ink:#e6ecf5; --muted:#93a1b8; --brand:#5b8cff; --line:#2a3548; --warn:#f59e0b; --err:#f87171; }
+}
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+main { max-width:680px; margin:0 auto; padding:32px 16px 48px; }
+header { text-align:center; margin-bottom:24px; }
+h1 { margin:0 0 4px; font-size:1.8rem; }
+header p { margin:0; color:var(--muted); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:24px; margin-bottom:20px; box-shadow:0 4px 18px rgba(20,40,80,.06); }
+.grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.wide { grid-column:1 / -1; }
+label { display:flex; flex-direction:column; gap:6px; font-size:.85rem; font-weight:600; color:var(--muted); }
+input, select { font:inherit; font-weight:400; color:var(--ink); background:var(--bg); border:1px solid var(--line); border-radius:8px; padding:10px 12px; width:100%; }
+input:focus, select:focus { outline:2px solid var(--brand); outline-offset:1px; }
+.dur { display:flex; align-items:center; gap:8px; }
+.dur input { max-width:90px; }
+.dur em { font-style:normal; color:var(--muted); }
+small { font-weight:400; color:var(--muted); min-height:1.2em; }
+button { margin-top:20px; width:100%; padding:12px; font:inherit; font-weight:600; color:#fff; background:var(--brand); border:0; border-radius:10px; cursor:pointer; }
+button:hover { filter:brightness(1.08); }
+button:disabled { opacity:.6; cursor:wait; }
+#result { text-align:center; }
+.price { font-size:2.6rem; font-weight:700; color:var(--brand); margin:4px 0; }
+.sub { color:var(--muted); margin:0; }
+.note { margin-top:14px; padding:10px 12px; border-radius:8px; font-size:.9rem; text-align:left; background:rgba(245,158,11,.12); color:var(--warn); }
+.error { color:var(--err); font-weight:600; margin:0; }
+@media (max-width:520px) { .grid { grid-template-columns:1fr; } }
